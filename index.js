@@ -16,6 +16,9 @@ function getValueFromArrayPath(obj, arrayPath) {
 }
 
 function getValueFromPath (obj, path) {
+    if(path === ''){
+        return obj
+    }
     if(path.indexOf('.') < 0) {
         return obj[path]
     }
@@ -38,8 +41,8 @@ function getArrayOfValues (obj, itemsOfPaths) {
 }
 
 function getsFromPath (obj, path) {
-    if(path.indexOf('[]') > 0) {
-        const itemsOfPaths = path.split('[].')
+    if(path.indexOf('[]') >= 0) {
+        const itemsOfPaths = path.split('[]').map(path => path.replace('.', ''))
         return getArrayOfValues(obj, itemsOfPaths)
     }
     return getValueFromPath(obj, path)
