@@ -1,6 +1,6 @@
 # jsGets
 
-Given an object with this structure
+- Given an object with this structure
 
 ```
 {
@@ -17,7 +17,7 @@ Given an object with this structure
 `jsGets(myObject, 'a.c[].d')` will return [4, 5, 2].
 
 
-Given an array with this structure
+- Given an array with this structure
 
 ```
 [
@@ -43,6 +43,9 @@ Given an array with this structure
 `jsGets(myObject, '[].bar[].lorem')` will return [4, undefined, 6].
 
 `undefined` because myObject[1].bar[0].lorem does not exist
+
+
+- Given an object with this structure
 
 ```
 {
