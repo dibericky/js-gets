@@ -134,8 +134,7 @@ describe('gets', () => {
             testFn = test.only
         }
         testFn(name, () => {
-            jsgets(obj, path)
-            expect(expected).toEqual(expected)
+            expect(jsgets(obj, path)).toEqual(expected)
         })
     })
 })
