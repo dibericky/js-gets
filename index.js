@@ -55,6 +55,10 @@ function normalize (values) {
     return plainArray(values)
 }
 
-module.exports = function gets(obj, path) {
-    return normalize(getsFromPath(obj, path))
+module.exports = function gets(obj, path, clearFromUndefined=true) {
+    const allValues = normalize(getsFromPath(obj, path))
+    if(clearFromUndefined) {
+        return allValues.filter(v => v)
+    }
+    return allValues
 }
